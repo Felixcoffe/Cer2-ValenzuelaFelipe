@@ -18,7 +18,7 @@ class Residencia(models.Model):
 class Correspondencia(models.Model):
     fecha_llegada= models.DateField()
     nombre= models.CharField(max_length=30, null=True)
-    Destino= models.CharField(max_length=4 ,null=True)
+    Destino= models.IntegerField(null=True)
     Estado_Cor= (
         ('En Consejeria','En Consejeria'),
         ('Entregada','Entregada')
