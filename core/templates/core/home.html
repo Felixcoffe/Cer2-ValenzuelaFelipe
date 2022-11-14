@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>document</title>
+  <link rel="stylesheet" href=" static/core/css/bootstrap.css ">
+
+</head>
+<body>
+    <p>buscar: <strong>{{query}}</strong></p>
+    {% if Corresponcencia %}
+    <table clas="table table-bordered">
+        <thead>
+            <tr>
+                <td>Fecha_llegada</td>
+                <td>Nombre</td>
+                <td>Destino</td>
+                <td>Estado</td>
+                <td>Fecha_entregado</td>
+            </tr>
+        </thead>
+    
+        <tbody>
+        {% for Correo in Correspondencia %}
+        <tr>
+            <td>{{Correo.fecha_llegada}}</td>
+            <td>{{Correo.nombre}}</td>
+            <td>{{Correo.Destino}}</td>
+            <td>{{Correo.Estado}}</td>            
+        </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+    {%else%}
+        <p>no hay correos</p>
+    {% endif %}
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+    integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+</body>
+</html>
